@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BLE_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="34b-uH-YOb">
+                                <rect key="frame" x="15" y="44" width="384" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sI-1l-1hZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="LTD-eS-XsU"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-Fq-snW">
+                                        <rect key="frame" x="0.0" y="5" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHb-Ky-dmX">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Set Acc On"/>
+                                                <connections>
+                                                    <action selector="accOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FHN-mY-9MS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmB-Zh-eW2">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Set Acc Off"/>
+                                                <connections>
+                                                    <action selector="accOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewy-AI-dYX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CPL-6J-Lz3">
+                                        <rect key="frame" x="0.0" y="39" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjZ-x4-pup">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="+-2g"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerRangeTo2GButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VLh-p2-qjy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtd-P7-WNZ">
+                                                <rect key="frame" x="96" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="+-4g"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerRangeTo4GButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NaN-Xn-QrE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz4-ex-rLZ">
+                                                <rect key="frame" x="192" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="+-9g"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerRangeTo9GButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GEB-ld-JkJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0t7-6z-bU3">
+                                                <rect key="frame" x="288" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="+-16g"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerRangeTo16GButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4t7-BI-PnD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hwH-rH-R5Y">
+                                        <rect key="frame" x="0.0" y="73" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAh-g8-Omq">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="25hz"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerOutputDataRateTo25HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dKw-IW-wcM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLW-ji-XXs">
+                                                <rect key="frame" x="128" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="50hz"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerOutputDataRateTo50HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dJ-Mo-17r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK6-np-ZNh">
+                                                <rect key="frame" x="256" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="100hz"/>
+                                                <connections>
+                                                    <action selector="setAccelerometerOutputDataRateTo100HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JzU-Oz-j2M"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLk-wb-yUu">
+                                        <rect key="frame" x="0.0" y="107" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="4v1-a9-WJO"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7Mv-PS-csO">
+                                        <rect key="frame" x="0.0" y="112" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uh2-Gi-8dj">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Gyro On"/>
+                                                <connections>
+                                                    <action selector="gyroOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxh-If-yJ7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGL-rk-KMd">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Gyro Off"/>
+                                                <connections>
+                                                    <action selector="gyroOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2oX-LK-zoY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5oJ-VZ-kLI">
+                                        <rect key="frame" x="0.0" y="146" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E75-qM-MNd">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="125dps"/>
+                                                <connections>
+                                                    <action selector="SetGyroRangeTo125ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5DE-A4-3v7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXc-05-m4M">
+                                                <rect key="frame" x="77" y="0.0" width="76.5" height="30"/>
+                                                <state key="normal" title="250dps"/>
+                                                <connections>
+                                                    <action selector="SetGyroRangeTo250ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2h-uC-aJm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQu-m8-gZ5">
+                                                <rect key="frame" x="153.5" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="500 dps"/>
+                                                <connections>
+                                                    <action selector="SetGyroRangeTo500ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTp-rN-9Cc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJ3-Oh-0ew">
+                                                <rect key="frame" x="230.5" y="0.0" width="76.5" height="30"/>
+                                                <state key="normal" title="1k dps"/>
+                                                <connections>
+                                                    <action selector="SetGyroRangeTo1kButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeF-BX-HUJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1C-kd-GAi">
+                                                <rect key="frame" x="307" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="2k dps"/>
+                                                <connections>
+                                                    <action selector="SetGyroRangeTo2kButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DMq-7k-oDj"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lgf-hD-MCK">
+                                        <rect key="frame" x="0.0" y="180" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrG-za-I8A">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="25hz"/>
+                                                <connections>
+                                                    <action selector="setGyroOutputDataRateTo25HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbw-Me-wKp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xke-TL-aWw">
+                                                <rect key="frame" x="128" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="50hz"/>
+                                                <connections>
+                                                    <action selector="setGyroOutputDataRateTo50HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6sw-ve-Xt0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgW-jz-wN4">
+                                                <rect key="frame" x="256" y="0.0" width="128" height="30"/>
+                                                <state key="normal" title="100hz"/>
+                                                <connections>
+                                                    <action selector="setGyroOutputDataRateTo100HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4b8-WL-vK0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Krv-w9-QlU">
+                                        <rect key="frame" x="0.0" y="214" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="DZg-sF-xXU"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YpL-cs-Ivy">
+                                        <rect key="frame" x="0.0" y="219" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhe-ko-TEK">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Magnetometer On"/>
+                                                <connections>
+                                                    <action selector="magnetometerOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UVk-a0-tOa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-qO-icG">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Magnetometer Off"/>
+                                                <connections>
+                                                    <action selector="magnetometerOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="br1-N7-q5U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7t9-YS-QRR">
+                                        <rect key="frame" x="0.0" y="253" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4u-1R-QFT">
+                                                <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="low power"/>
+                                                <connections>
+                                                    <action selector="setMagnetometerPresetToLowPowerHzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BLp-uA-dB8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cv-ye-5cT">
+                                                <rect key="frame" x="96" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="regular 1"/>
+                                                <connections>
+                                                    <action selector="setMagnetometerPresetToRegular1ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vsz-Is-HcP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EV-Mh-3qR">
+                                                <rect key="frame" x="192" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="regular 2"/>
+                                                <connections>
+                                                    <action selector="setMagnetometerPresetToRegular2ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kyA-ar-8Rl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTA-Ae-m0S">
+                                                <rect key="frame" x="288" y="0.0" width="96" height="30"/>
+                                                <state key="normal" title="enhanced"/>
+                                                <connections>
+                                                    <action selector="setMagnetometerPresetToEnhancedRegularButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CX9-WA-gy1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-sD-b9J">
+                                        <rect key="frame" x="0.0" y="287" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="UvE-cb-9rI"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Jmh-zL-AV8">
+                                        <rect key="frame" x="0.0" y="292" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXO-Xq-ZRE">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Quaternion On"/>
+                                                <connections>
+                                                    <action selector="quaternionOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sKD-fC-AwX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMl-WP-OHE">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Quaternion Off"/>
+                                                <connections>
+                                                    <action selector="quaternionOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7i0-1B-IzO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-XN-maZ">
+                                        <rect key="frame" x="0.0" y="326" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cU9-Qj-Qfw"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EBA-8X-qZ0">
+                                        <rect key="frame" x="0.0" y="331" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36t-kg-Prg">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="LinearAcceleration On"/>
+                                                <connections>
+                                                    <action selector="linearAccelerationOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3B-d1-Ix6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-TU-X4h">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="LinearAcceleration Off"/>
+                                                <connections>
+                                                    <action selector="linearAccelerationOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mnq-ng-Rav"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xC-9f-yzP">
+                                        <rect key="frame" x="0.0" y="365" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="umM-DV-PnB"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hm2-HL-XoH">
+                                        <rect key="frame" x="0.0" y="370" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXh-ap-Dbi">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="SensorFusionMode On"/>
+                                                <connections>
+                                                    <action selector="setSensorFusionModeOnButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z9k-G4-NFh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-zZ-lo5">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="SensorFusionMode Off"/>
+                                                <connections>
+                                                    <action selector="setSensorFusionModeOffButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HAH-ee-IIa"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9od-Wp-xr9">
+                                        <rect key="frame" x="0.0" y="404" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="wln-0f-9Mj"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Fon-24-eTV">
+                                        <rect key="frame" x="0.0" y="409" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBj-uv-fhO">
+                                                <rect key="frame" x="0.0" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="-16"/>
+                                                <connections>
+                                                    <action selector="setTXPowerToNegative16HzButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rs1-LB-X6H"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7N0-f1-UuN">
+                                                <rect key="frame" x="77" y="0.0" width="76.5" height="30"/>
+                                                <state key="normal" title="-8"/>
+                                                <connections>
+                                                    <action selector="setTXPowerToNegative8ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKG-lJ-LmQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLk-td-r06">
+                                                <rect key="frame" x="153.5" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="-4"/>
+                                                <connections>
+                                                    <action selector="setTXPowerToNegative4ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAy-hQ-TD0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltk-kD-Vee">
+                                                <rect key="frame" x="230.5" y="0.0" width="76.5" height="30"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="setTXPowerToZeroButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lgt-qN-4aV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCC-H1-Mlh">
+                                                <rect key="frame" x="307" y="0.0" width="77" height="30"/>
+                                                <state key="normal" title="+4"/>
+                                                <connections>
+                                                    <action selector="setTXPowerToPostive4ButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Asb-a2-egS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-9V-GjF">
+                                        <rect key="frame" x="0.0" y="443" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="xNH-no-eDS"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8cz-ap-h6T">
+                                        <rect key="frame" x="0.0" y="448" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8P0-2o-wdW">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Start Streaming"/>
+                                                <connections>
+                                                    <action selector="startStreamingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qtb-0k-AOx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-Bu-iLg">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Stop Streaming"/>
+                                                <connections>
+                                                    <action selector="stopStreamingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XNo-fK-khN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWn-6j-ey6">
+                                        <rect key="frame" x="0.0" y="482" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="dqi-hX-9ly"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1gW-Tp-d6o">
+                                        <rect key="frame" x="0.0" y="487" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csp-rk-eTg">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Start Logging"/>
+                                                <connections>
+                                                    <action selector="startLoggingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T6n-Fw-HT6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROX-mK-Mi4">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Stop Logging"/>
+                                                <connections>
+                                                    <action selector="stopLoggingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KcJ-wp-TEd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Vk3-S6-bQ9">
+                                        <rect key="frame" x="0.0" y="521" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-Kh-Hk9">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Download Logging"/>
+                                                <connections>
+                                                    <action selector="startDownloadingLoggingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHG-6e-CJP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6S-oB-aMv">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Stop Download"/>
+                                                <connections>
+                                                    <action selector="stopDownloadingLoggingButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PS8-FH-EnW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPy-Eu-Isv">
+                                        <rect key="frame" x="0.0" y="555" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ly1-QD-Bnd"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-f3-iYA">
+                                        <rect key="frame" x="0.0" y="560" width="384" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAZ-Jq-MgP">
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Start OTA"/>
+                                                <connections>
+                                                    <action selector="startUpdateFirewareButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dfe-BW-m3y"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82f-sI-A45">
+                                                <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="resetButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOp-nb-DN5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4M-OC-fhH">
+                                        <rect key="frame" x="0.0" y="594" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="1vQ-x1-Vbw"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-hr-7aD">
+                                        <rect key="frame" x="0.0" y="599" width="384" height="219"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="34b-uH-YOb" secondAttribute="trailing" constant="15" id="Vpf-od-XsN"/>
+                            <constraint firstItem="34b-uH-YOb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Z1z-aQ-LBQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="34b-uH-YOb" secondAttribute="bottom" id="Z7B-Hk-55K"/>
+                            <constraint firstItem="34b-uH-YOb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="c87-TH-I5K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logTextView" destination="vdZ-hr-7aD" id="9iU-MD-NxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="54"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
