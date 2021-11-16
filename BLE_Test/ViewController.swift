@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         bleManager = BLEManager(
             delegate: self
         )
-        
         logTextView.isEditable = false
     }
     
