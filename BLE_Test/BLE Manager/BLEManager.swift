@@ -316,13 +316,13 @@ extension BLEManager: CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
-        if error == nil {
+        if error != nil {
             delegate?.didSendCommandFail()
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        if error == nil {
+        if error != nil {
             delegate?.didSendCommandFail()
             return
         }
