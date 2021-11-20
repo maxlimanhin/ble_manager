@@ -23,8 +23,11 @@ protocol BLEManagerDelegate: NSObject {
     func peripheralDidDiscoverCharacteristic(characteristic: CBCharacteristic?, error: BLEManagerError?)
     
     // MARK:BLE Module Delegage
-    func txRxCharacteristicdidSet()
+    func batteryCharacteristicDidSet()
+    func batteryStatusDidUpdate(batteryStatus status: [UInt8])
+    func txRxCharacteristicDidSet()
     func didSendCommandFail()
+
     
     // Accelerometer
     func accelerometerModule(didSetEnable enable: Bool)
@@ -87,7 +90,7 @@ class BLEManager: NSObject{
         didSet {
             if txCharacteristic != nil &&
                rxCharacteristic != nil {
-                delegate?.txRxCharacteristicdidSet()
+                delegate?.txRxCharacteristicDidSet()
             }
         }
     }
@@ -97,7 +100,16 @@ class BLEManager: NSObject{
         didSet {
             if txCharacteristic != nil &&
                rxCharacteristic != nil {
-                delegate?.txRxCharacteristicdidSet()
+                delegate?.txRxCharacteristicDidSet()
+            }
+        }
+    }
+    
+    let batteryCharacteristicUUID = CBUUID(string: "0x2A19")
+    var batteryCharacteristic: CBCharacteristic? {
+        didSet {
+            if batteryCharacteristic != nil {
+                delegate?.batteryCharacteristicDidSet()
             }
         }
     }
@@ -308,6 +320,13 @@ extension BLEManager: CBPeripheralDelegate {
                 txCharacteristic = chararcteristice
             }
             
+            if chararcteristice.uuid == batteryCharacteristicUUID {
+                batteryCharacteristic = chararcteristice
+                if let batteryCharacteristic = batteryCharacteristic {
+                    connectedCBPeripheral?.setNotifyValue(true, for: batteryCharacteristic)
+                }
+            }
+            
             delegate?.peripheralDidDiscoverCharacteristic(
                 characteristic: chararcteristice,
                 error: nil
@@ -326,7 +345,7 @@ extension BLEManager: CBPeripheralDelegate {
             delegate?.didSendCommandFail()
             return
         }
-        guard let returnData = characteristic.value else { return }
+        let returnData = characteristic.value ?? Data()
         let returnValue = [UInt8](returnData)
         if characteristic.uuid == rxCharacteristicUUID {
             // Acc
@@ -419,6 +438,8 @@ extension BLEManager: CBPeripheralDelegate {
             else {
                 delegate?.otherValueReturn(didReturnData: returnData)
             }
+        } else if characteristic.uuid == batteryCharacteristicUUID {
+            delegate?.batteryStatusDidUpdate(batteryStatus: returnValue)
         }
     }
 }

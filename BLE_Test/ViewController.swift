@@ -185,7 +185,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: BLEManagerDelegate {
-    
     // MARK: BLEManagerDelegate centralManager Func protocol
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -235,8 +234,16 @@ extension ViewController: BLEManagerDelegate {
     func peripheralDidDiscoverCharacteristic(characteristic: CBCharacteristic?, error: BLEManagerError?) {
     }
     
-    func txRxCharacteristicdidSet() {
+    func txRxCharacteristicDidSet() {
         printLog(string: "didSetTxRxCharacteristic Ready for send Command")
+    }
+    
+    func batteryCharacteristicDidSet() {
+        printLog(string: "didSetBattaryCharacteristic Ready for get battary status")
+    }
+    
+    func batteryStatusDidUpdate(batteryStatus status: [UInt8]) {
+        printLog(string: "Battery level: \(status[0])")
     }
     
     func didSendCommandFail() {
