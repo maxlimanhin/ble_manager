@@ -254,6 +254,10 @@ extension BLEManager {
         sendModuleCommandToTXCharacteristic(command: BLECommand.DownloadLoggedData.downloadOff.toCommand())
     }
     
+    func getLoggedEntries() {
+        sendModuleCommandToTXCharacteristic(command: BLECommand.LogEntries.logEntries.toCommand())
+    }
+    
     func startOTA() {
         sendModuleCommandToTXCharacteristic(command: BLECommand.Updatefirmware.updateFirmware.toCommand())
     }
