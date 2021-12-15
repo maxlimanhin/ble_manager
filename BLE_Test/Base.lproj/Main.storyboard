@@ -452,15 +452,22 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aax-wx-cpM">
+                                        <rect key="frame" x="0.0" y="555" width="384" height="30"/>
+                                        <state key="normal" title="Log Entries"/>
+                                        <connections>
+                                            <action selector="getLogEntriesButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XZe-5X-meR"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mPy-Eu-Isv">
-                                        <rect key="frame" x="0.0" y="555" width="384" height="1"/>
+                                        <rect key="frame" x="0.0" y="589" width="384" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="ly1-QD-Bnd"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-f3-iYA">
-                                        <rect key="frame" x="0.0" y="560" width="384" height="30"/>
+                                        <rect key="frame" x="0.0" y="594" width="384" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAZ-Jq-MgP">
                                                 <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
@@ -479,14 +486,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4M-OC-fhH">
-                                        <rect key="frame" x="0.0" y="594" width="384" height="1"/>
+                                        <rect key="frame" x="0.0" y="628" width="384" height="1"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="1vQ-x1-Vbw"/>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vdZ-hr-7aD">
-                                        <rect key="frame" x="0.0" y="599" width="384" height="219"/>
+                                        <rect key="frame" x="0.0" y="633" width="384" height="185"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

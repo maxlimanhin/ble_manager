@@ -50,7 +50,11 @@ protocol BLEManagerDelegate: NSObject {
     func sensorFusionMode(didSetModeEnable enable: Bool)
     // SetTXPower
     func txPower(didSetTXPower power: BLECommand.SetTXPower)
-    // Stream, Logging, Download Logging, OTA
+    // Log Entries
+    /// Return Log Entries value
+    func logEntries(didReturnLogEntries value: [UInt8])
+    // Streaming, Logging, Download Logging, OTA
+    /// Return Streaming, Logging, Download Logging, OTA Data
     func otherValueReturn(didReturnData data: Data)
 }
 
@@ -437,6 +441,10 @@ extension BLEManager: CBPeripheralDelegate {
                 delegate?.txPower(didSetTXPower: .zero)
             } else if returnValue == BLECommand.SetTXPower.postive4.toCommand() {
                 delegate?.txPower(didSetTXPower: .postive4)
+            } else if returnValue.count == 6 {
+                if returnValue[4] == 0xfe && returnValue[5] == 0xce {
+                    delegate?.logEntries(didReturnLogEntries: returnValue)
+                }
             }
             // Stream, Logging, Download Logging, OTA
             else {
