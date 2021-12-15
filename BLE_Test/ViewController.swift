@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         bleManager = BLEManager(
             delegate: self
         )
-        
         logTextView.isEditable = false
     }
     
@@ -156,16 +155,19 @@ class ViewController: UIViewController {
     
         // MARK: Logging
     @IBAction func startLoggingButtonDidPress(_ sender: Any) {
-        bleManager?.startStreaming()
+        bleManager?.startLogging()
     }
     @IBAction func stopLoggingButtonDidPress(_ sender: Any) {
-        bleManager?.stopStreaming()
+        bleManager?.stopLogging()
     }
     @IBAction func startDownloadingLoggingButtonDidPress(_ sender: Any) {
         bleManager?.startDownloadLoggedData()
     }
     @IBAction func stopDownloadingLoggingButtonDidPress(_ sender: Any) {
         bleManager?.stopDownloadLoggedData()
+    }
+    @IBAction func getLogEntriesButtonDidPress(_ sender: Any) {
+        bleManager?.getLoggedEntries()
     }
     
         // MARK: OTA
@@ -296,6 +298,10 @@ extension ViewController: BLEManagerDelegate {
     
     func txPower(didSetTXPower power: BLECommand.SetTXPower) {
         printLog(string: "txPower didSetTXPower power: \(power)")
+    }
+    
+    func logEntries(didReturnLogEntries value: [UInt8]) {
+        printLog(string: "Log Entries value: \(value)")
     }
     
     func otherValueReturn(didReturnData data: Data) {

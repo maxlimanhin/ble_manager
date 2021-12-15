@@ -14,9 +14,7 @@ class BLECommand {
         func toCommand() -> [UInt8] {
             switch self {
             case .reset:
-                //0xfe02
-                return [UInt8(0xfe02 >> 8),
-                        UInt8(0xfe02 & 0x00ff)]
+                return [0xfe, 0x02]
             }
         }
     }
@@ -273,9 +271,7 @@ class BLECommand {
         func toCommand() -> [UInt8] {
             switch self {
             case .logEntries:
-                // 0xfece
-                return [UInt8(0xfece >> 8),
-                        UInt8(0xfece & 0x00ff)]
+                return [0xfE, 0xce]
             }
         }
     }
@@ -286,9 +282,7 @@ class BLECommand {
         func toCommand() -> [UInt8] {
             switch self {
             case .updateFirmware:
-                //0xfe01
-                return [UInt8(0xfe01 >> 8),
-                        UInt8(0xfe01 & 0x00ff)]
+                return [0xfe, 0x01]
             }
         }
     }
