@@ -267,6 +267,19 @@ class BLECommand {
         }
     }
     
+    enum LogEntries {
+        case logEntries
+        
+        func toCommand() -> [UInt8] {
+            switch self {
+            case .logEntries:
+                // 0xfece
+                return [UInt8(0xfece >> 8),
+                        UInt8(0xfece & 0x00ff)]
+            }
+        }
+    }
+        
     enum Updatefirmware {
         case updateFirmware
         
