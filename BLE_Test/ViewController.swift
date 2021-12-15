@@ -11,6 +11,7 @@ import CoreBluetooth
 class ViewController: UIViewController {
     @IBOutlet weak var logTextView: UITextView!
     
+    
     var bleManager: BLEManager?
     
     override func viewDidLoad() {
