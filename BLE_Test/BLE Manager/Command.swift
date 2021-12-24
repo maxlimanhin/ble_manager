@@ -246,7 +246,7 @@ class BLECommand {
             case .startLogging:
                 return [0xf3, 0xd1]
             case .stopLogging:
-                return [0xf3, 0xde]
+                return [0xf4, 0xd1]
             }
         }
     }
@@ -271,7 +271,7 @@ class BLECommand {
         func toCommand() -> [UInt8] {
             switch self {
             case .logEntries:
-                return [0xfE, 0xce]
+                return [0xfe, 0xce]
             }
         }
     }
